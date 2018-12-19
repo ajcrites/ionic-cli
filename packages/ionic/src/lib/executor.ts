@@ -33,7 +33,7 @@ export class Executor extends AbstractExecutor<ICommand, INamespace, CommandMeta
     }
 
     const cmd = location.obj;
-    const cmdargs = lodash.drop(argv, location.path.length - 1);
+    const cmdargs = lodash.drop(pargs, location.path.length - 1);
 
     await this.run(cmd, cmdargs, { location, env, executor: this });
   }
